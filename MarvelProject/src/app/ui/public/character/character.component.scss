@@ -1,0 +1,45 @@
+ 
+
+.section-list {
+    // display: flex;
+    overflow: auto;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .item {
+    display: inline-block;
+    width: 200px;
+    flex-wrap: wrap;
+    margin: 0 10px;
+  }
+
+//   .section-list::-webkit-scrollbar {
+//     width: 8px; /* Tamaño del scroll en vertical */
+//     height: 8px; /* Tamaño del scroll en horizontal */
+//     display: none; /* Ocultar scroll */
+//   }
+
+  .img-size {
+      width: 192px;
+      height: 210px;
+  }
+
+
+  @media only screen and (max-width: 992px) {
+   
+    .img-size {
+        width: 130px;
+        height: 170px;
+    }
+
+    .item {
+        display: inline-block;
+        width: 144px;
+        flex-wrap: wrap;
+        margin-left: -8px;
+      }
+  
+  }
+  

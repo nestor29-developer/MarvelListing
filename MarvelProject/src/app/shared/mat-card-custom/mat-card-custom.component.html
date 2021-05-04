@@ -1,0 +1,86 @@
+
+<section class="text-center py-5">
+
+    <h2>Comics</h2>
+
+<div>
+    <h4>{{data.description}}</h4>
+</div>
+
+
+<div class="row py-3 align-items-center mt-4">
+  <div class="col-12 d-flex justify-content-center">
+    <div class="horizontal-scroll d-flex align-items-center">
+      <span class="arrowLeft d-lg-block d-none" id="arrow-left" (click)="scrollLeft()" *ngIf="data.images.length>6">
+        <img
+          src="assets/icon/a-icon-arrow-left.svg"
+          *ngIf="!activeScrollRight"
+        />
+        <img
+          src="assets/icon/a-icon-arrow-left-actived.svg"
+          *ngIf="activeScrollRight"
+        />
+      </span>
+
+      <span class="arrowLeft d-lg-none d-block" id="arrow-left" (click)="scrollLeft()" *ngIf="data.images.length>2">
+        <img
+          src="assets/icon/a-icon-arrow-left.svg"
+          *ngIf="!activeScrollRight"
+        />
+        <img
+          src="assets/icon/a-icon-arrow-left-actived.svg"
+          *ngIf="activeScrollRight"
+        />
+      </span>
+
+      <ul #cardContent class="section-list">
+        <mat-card class="example-card item" *ngFor="let detail of data.images">
+          <mat-card-header>
+            <mat-card-title class="">{{ detail.name }}</mat-card-title>
+          </mat-card-header>
+
+          <mat-card-content class="text-justify">
+            <div class="">
+              <img
+                class="pr-1"
+                class="img-size"
+                src="{{ detail.path }}.{{
+                  detail.extension
+                }}"
+                alt=""
+              />
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </ul>
+
+      <span class="arrowRight d-lg-none d-block" id="arrow-right" (click)="scrollRight()" *ngIf="data.images.length>2">
+        <img
+          src="assets/icon/a-icon-arrow-right.svg"
+          *ngIf="!activeScrollLeft"
+        />
+        <img
+          src="assets/icon/a-icon-arrow-right-actived.svg"
+          *ngIf="activeScrollLeft"
+        />
+      </span>
+
+      <span class="arrowRight d-lg-block d-none" id="arrow-right" (click)="scrollRight()" *ngIf="data.images.length>6">
+        <img
+          src="assets/icon/a-icon-arrow-right.svg"
+          *ngIf="!activeScrollLeft"
+        />
+        <img
+          src="assets/icon/a-icon-arrow-right-actived.svg"
+          *ngIf="activeScrollLeft"
+        />
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="mb-5 mt-2" *ngIf="data.urls[0].url">
+    <a href="{{data.urls[0].url}}" target="_blank">More Information</a> 
+</div>
+
+</section>

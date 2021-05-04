@@ -1,0 +1,60 @@
+<header>
+    <app-header>
+        <div class="navbar-container"> 
+            <div class="bc-list-options"> 
+                <a><span class="color-title-active" (click)="onActiveTitleOption(1);">Characters</span> 
+                     
+                </a> 
+                <a><span class="color-title-active"  (click)="onActiveTitleOption(2);">Comics</span> 
+                </a> 
+                <!-- <a [matMenuTriggerFor]="character" #characterlist="matMenuTrigger"><span class="color-title-active" (mouseover)="onActiveTitleOption(1);">Characters</span> 
+                    <mat-menu #character="matMenu" yPosition="below">
+                        <button (click)="onActivateDisplay(1)" mat-menu-item style="background-color: white !important;"><span class="color-active">Character</span></button> 
+                        <button (click)="onActivateDisplay(2)" mat-menu-item style="background-color: white !important;"><span class="color-active">Character's comics</span></button> 
+                        <button (click)="onActivateDisplay(3)" mat-menu-item style="background-color: white !important;"><span class="color-active">Character's stories</span></button>     
+                    </mat-menu>  
+                </a>   -->
+                <!-- <a [matMenuTriggerFor]="comic" #comiclist="matMenuTrigger"><span class="color-title-active"  (mouseover)="onActiveTitleOption(2);">Comics</span> 
+                    <mat-menu #comic="matMenu">
+                        <button (click)="onActivateDisplay(4)" mat-menu-item style="background-color: white !important;"><span class="color-active">Comics</span></button> 
+                        <button (click)="onActivateDisplay(5)" mat-menu-item style="background-color: white !important;"><span class="color-active">Comic's characters</span></button> 
+                        <button (click)="onActivateDisplay(6)" mat-menu-item style="background-color: white !important;"><span class="color-active">Comic's stories</span></button> 
+                    </mat-menu> 
+                </a>  -->
+                <a [matMenuTriggerFor]="story" #storylist="matMenuTrigger"><span class="color-title-active"  (click)="onActiveTitleOption(3);">Stories</span>
+                    <mat-menu #story="matMenu">
+                        <button (click)="onActivateDisplay(31)" mat-menu-item style="background-color: white !important;"><span class="color-active">Stories characters</span></button> 
+                        <button (click)="onActivateDisplay(32)" mat-menu-item style="background-color: white !important;"><span class="color-active">Stories comics</span></button>  
+                    </mat-menu> 
+                </a> 
+            </div> 
+            <a [routerLink]="['/']" class="bc-brand">
+                <img src="assets/img/marvel-logo.jpg" alt="Isotipo Bancom">
+            </a>
+        </div>
+    </app-header>
+</header>
+
+
+
+<main>
+    <div class="bc-container">
+
+        <app-character 
+        *ngIf="optionOne" 
+        [datacharacters]="characters"
+        [title] = "titlelabel"
+        ></app-character>
+
+
+      
+        
+   
+    </div>
+
+
+</main>
+
+
+
+

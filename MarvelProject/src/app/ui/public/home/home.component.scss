@@ -1,0 +1,85 @@
+header {
+  position: relative;
+  min-height: 60px;
+  z-index: 999 !important;
+}
+
+main {
+  position: absolute;
+  //   min-height: calc(100vh - 60px);
+  min-width: 100% !important;
+  width: 100% !important;
+}
+
+.navbar-container {
+  position: relative;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.bc-brand img {
+  width: 101.43px;
+  height: 40px;
+}
+
+.bc-list-options a {
+  font-family: "LondonWeb";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: -1px;
+  font-feature-settings: "tnum" on, "lnum" on;
+  color: rgba(0, 0, 0, 0.87);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.bc-list-options a + a {
+  margin-left: 40px;
+}
+
+.color-active:hover {
+  color: #fb0019;
+}
+
+.color-title-active:hover {
+    color: rebeccapurple;
+  }
+
+@media only screen and (max-width: 768px) {
+  header {
+    position: relative;
+    min-height: 56px;
+  }
+
+  .navbar-container {
+    height: 60px;
+  }
+
+  .bc-brand img {
+    width: 69px;
+    height: 29px;
+    margin-right: 12px;
+  }
+
+  .bc-list-options a {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .bc-list-options a + a {
+    margin-left: 16px;
+  }
+
+  .color-active {
+      font-size: 12px !important;
+  }
+}
+
+ 
