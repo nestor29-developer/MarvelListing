@@ -10,6 +10,7 @@ import { DetailComponent } from './character/detail/detail.component';
 import { ComicComponent } from './comic/comic.component';
 import { StoryComponent } from './story/story.component';
 import { DetailStoryComponent } from './story/detail/detail.component';
+import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material';
  
 @NgModule({
   declarations: [ 
@@ -35,6 +36,10 @@ import { DetailStoryComponent } from './story/detail/detail.component';
     PublicComponent
   ],
   providers:[ 
+    {
+      provide: MAT_RADIO_DEFAULT_OPTIONS,
+      useValue: { color: 'accent' },
+  }
   ],
 
   exports: [ 

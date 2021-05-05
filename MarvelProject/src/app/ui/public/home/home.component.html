@@ -24,7 +24,30 @@
 
 
 <main>
-    <div class="bc-container">
+
+    <div class="background-lite">
+        <div class="container"> 
+            <form action="" class="position-relative">
+                <input  [(ngModel)]="searchtexting" class="txt-search body1" type="text" name="searchText" id="searchText" placeholder="write your favorite ..." (keyup)="search()">            
+                <span class="abs-image">
+                    <img src="assets/img/search-ask.svg" alt="Buscar">
+                </span> 
+            </form>   
+         </div> 
+         <div class="col-12 d-flex justify-content-center" style="cursor: pointer;">
+            <div class="custom-control custom-radio">
+                <input value="1" type="radio" (click)="onCheckAsc()"  class="custom-control-input" id="defaultUnchecked" name="rdo" mdbInput>
+                <label class="custom-control-label" for="defaultUnchecked">Ascending</label>
+              </div>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <div class="custom-control custom-radio">
+                <input value="2" type="radio" (click)="onCheckDes()" class="custom-control-input" id="defaultChecked" name="rdo"  mdbInput>
+                <label class="custom-control-label" for="defaultChecked">Descending</label>
+              </div>
+          </div> 
+    </div>
+
+    <div class="bc-container"> 
 
         <app-character 
         *ngIf="optionOne" 
