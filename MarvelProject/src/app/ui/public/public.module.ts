@@ -7,13 +7,19 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { HomeComponent } from './home/home.component';
 import { CharacterComponent } from './character/character.component';
 import { DetailComponent } from './character/detail/detail.component';
+import { ComicComponent } from './comic/comic.component';
+import { StoryComponent } from './story/story.component';
+import { DetailStoryComponent } from './story/detail/detail.component';
  
 @NgModule({
   declarations: [ 
     HomeComponent,
     PublicComponent,
     CharacterComponent,
-    DetailComponent
+    DetailComponent,
+    ComicComponent,
+    StoryComponent,
+    DetailStoryComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +28,7 @@ import { DetailComponent } from './character/detail/detail.component';
     PublicRoutingModule, 
     SharedModule
   ],
-  // schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   entryComponents: [  
   ],
   bootstrap: [

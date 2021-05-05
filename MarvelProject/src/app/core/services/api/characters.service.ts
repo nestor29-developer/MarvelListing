@@ -62,4 +62,37 @@ export class CharactersService {
       new HttpParams({ fromObject: params })
     );
   }
+
+  getStoriesByCharacter(id): Observable<any> { 
+    const tsvalue = Number(new Date());
+    const hash2 = md5.create();
+    hash2.update(tsvalue + environment.private_key + environment.public_key);
+    const pathadit = '/'+id+'/stories'; 
+    const params = { 
+      apikey: environment.public_key,
+      ts: tsvalue.toString(),
+      hash: hash2.toString(),
+    };
+    
+    return this.apiService.get(
+      this.path+pathadit,
+      new HttpParams({ fromObject: params })
+    );
+  }
+
+  getStories(id): Observable<any> { 
+    const tsvalue = Number(new Date());
+    const hash2 = md5.create();
+    hash2.update(tsvalue + environment.private_key + environment.public_key); 
+    const params = { 
+      apikey: environment.public_key,
+      ts: tsvalue.toString(),
+      hash: hash2.toString(),
+    };
+    
+    return this.apiService.get(
+       'stories/'+id,
+      new HttpParams({ fromObject: params })
+    );
+  }
 }

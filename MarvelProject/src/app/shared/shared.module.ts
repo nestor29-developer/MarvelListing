@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialAngularModule } from './material/material.module';
 import { HeaderComponent } from './header/header.component';
 import { MatCardCustomComponent } from './mat-card-custom/mat-card-custom.component';
- 
+ import { CircularLoaderComponent } from './circular-loader/circular-loader.component';
  
 @NgModule({ 
   imports: [
@@ -16,11 +16,13 @@ import { MatCardCustomComponent } from './mat-card-custom/mat-card-custom.compon
     ReactiveFormsModule,    
     MaterialAngularModule, 
     HeaderComponent,
-    MatCardCustomComponent
+    MatCardCustomComponent,
+    CircularLoaderComponent
   ], 
   declarations: [
     HeaderComponent,
-    MatCardCustomComponent
+    MatCardCustomComponent,
+    CircularLoaderComponent
   ], 
 })
 export class SharedModule { }

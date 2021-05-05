@@ -30,15 +30,20 @@
 
 <div class="col-12 mt-5" *ngIf="comicsInfo">
 
-    <app-mat-card-custom [data] = "comicsInfo"></app-mat-card-custom>
+    <app-mat-card-custom [data] = "comicsInfo" [title] = "titlehead"></app-mat-card-custom>
 
 </div>
 
-<!-- <div class="col-12">
+<div class="col-12 text-center py-2" *ngIf="storiesInfo">
 
-    <app-mat-card-custom></app-mat-card-custom>
+  <h2>Story</h2>
 
-</div> -->
+  <div class="col py-4">
+      <h5>Title: {{storiesInfo?.title}}</h5>
+      <h6>Modified: {{storiesInfo?.modified | date}} </h6>
+  </div>
+
+</div>
 
 
 

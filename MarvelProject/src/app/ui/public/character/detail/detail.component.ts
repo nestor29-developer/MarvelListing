@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CharactersService } from 'src/app/core/services/api/characters.service';
 import { Router } from '@angular/router';
 import { character } from 'src/app/core/models/character.model';
+import { story } from 'src/app/core/models/story.model';
 
 @Component({
   selector: 'app-detail',
@@ -13,7 +14,10 @@ export class DetailComponent implements OnInit {
  
   characterInfo;
   comicsInfo;
-  datacharacter: character; 
+  storiesInfo;
+  datacharacter: character;
+  datastory: story; 
+  titlehead;
 
   constructor(
     private characterService: CharactersService,
@@ -23,6 +27,14 @@ export class DetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.getDataById();
+    this.initializeModel();
+  }
+
+  initializeModel() {
+    this.datastory = {
+      id: 0,
+      activeListStory: false
+    }
   }
 
   getDataCharacter() { 
@@ -36,15 +48,17 @@ export class DetailComponent implements OnInit {
         this.characterInfo = res.data.results[0];
         this.getComicsByCharacter(); 
         console.log('characterInfo', this.characterInfo);
+        this.getStoriesByCharacter();
       },
       (catchError) => {}
-    );
- 
+    ); 
   }
 
   goBack() { 
     this.datacharacter.activeListCharacter = true;
-    sessionStorage.setItem('data-character', JSON.stringify(this.datacharacter)); 
+    sessionStorage.setItem('data-character', JSON.stringify(this.datacharacter));
+    this.datastory.activeListStory = false;
+    sessionStorage.setItem('data-story', JSON.stringify(this.datastory));  
     this.router.navigateByUrl('/inicio');   
   }
 
@@ -52,11 +66,21 @@ export class DetailComponent implements OnInit {
     this.characterService.getComicsByCharacter(this.datacharacter.id).subscribe(
       (res) => { 
         this.comicsInfo = res.data.results[0];
+        this.titlehead = 'Comics';
         console.log('comicsInfo', this.comicsInfo); 
       },
       (catchError) => {}
-    );
-
+    ); 
   }
+
+  getStoriesByCharacter() { 
+    this.characterService.getStoriesByCharacter(this.datacharacter.id).subscribe(
+      (res) => { 
+        this.storiesInfo = res.data.results[0]; 
+        console.log('storiesInfo', this.storiesInfo);   
+      },
+      (catchError) => {}
+    ); 
+  } 
 
 }

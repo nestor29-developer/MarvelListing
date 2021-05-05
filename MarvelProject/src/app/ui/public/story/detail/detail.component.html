@@ -1,0 +1,48 @@
+<div class="container mt-5 py-2">
+    <div class="d-flex" style="align-items: center; vertical-align: middle">
+      <a (click)="goBack()" style="cursor: pointer">
+        <img src="assets/img/back-ask.svg" alt="back" />
+      </a>
+      <div class="d-flex flex-column pl-4">
+        <h4 class="title-loan">MARVEL</h4>
+        <p class="body1">Stories</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="align-items-center d-flex flex-row-reverse mt-5">
+    <div class="col-lg-6 col-6">
+      <img
+        class="mh-100 d-block mx-auto img-fluid img-size"
+        src="{{ storyInfo?.thumbnail?.path }}.{{
+            storyInfo?.thumbnail?.extension
+        }}"
+        alt=""
+      />
+    </div>
+  
+    <div class="col-lg-4 col-6">
+      <h2>{{ storyInfo?.title }}</h2>
+  
+      <h4>{{ storyInfo?.description }}</h4>
+    </div>
+  </div>
+
+<div class="col-12 mt-5" *ngIf="comicsInfo">
+
+    <app-mat-card-custom [data] = "comicsInfo" [title] = "titlehead"></app-mat-card-custom>
+
+</div>
+
+
+<div class="col-12 text-center py-2" *ngIf="charactersinfo">
+
+    <h2>characters</h2>
+  
+    <div class="col py-4">
+        <h5>Title: {{charactersinfo?.title}}</h5>
+        <h6>Modified: {{charactersinfo?.modified | date}} </h6>
+    </div>
+  
+  </div>

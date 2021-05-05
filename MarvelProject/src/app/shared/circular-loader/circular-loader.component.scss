@@ -1,0 +1,88 @@
+.bc-circular-loader {
+    position: relative;
+    margin: 0 auto;
+    width: 72px;
+    height: 72px;
+}
+
+.bc-circ-loader {
+    margin: 0 auto !important;
+    -webkit-animation: rotateCircularLoader 2s infinite linear;
+    animation: rotateCircularLoader 2s infinite linear;
+}
+
+.bc-circle-load {
+    animation: scaleCircle 1.5s infinite;
+    -webkit-animation: scaleCircle 1.5s infinite;
+    transition: 0.5s;
+}
+
+@-webkit-keyframes rotateCircularLoader {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateCircularLoader {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes scaleCircle {
+    0% {
+        r: 7;
+        // fill: #003399;
+    }
+
+    100% {
+        r: 4;
+        fill: transparent;
+    }
+}
+
+@keyframes scaleCircle {
+    0% {
+        r: 7;
+        // fill: #003399;
+    }
+
+    100% {
+        r: 4;
+        fill: transparent;
+    }
+
+}
+
+.bc-circ-loader .bc-circle-load:nth-child(3) {
+    animation-delay: -0.1875s;
+}
+.bc-circ-loader .bc-circle-load:nth-child(2) {
+    animation-delay: -0.375s;
+}
+.bc-circ-loader .bc-circle-load:nth-child(1) {
+    animation-delay: -0.5625s;
+}
+.bc-circ-loader .bc-circle-load:nth-child(8) {
+    animation-delay: -0.75s;
+}
+.bc-circ-loader .bc-circle-load:nth-child(7) {
+    animation-delay: -0.9375s;
+}
+.bc-circ-loader .bc-circle-load:nth-child(6) {
+    animation-delay: -1.125s;
+}
+.bc-circ-loader .bc-circle-load:nth-child(5) {
+    animation-delay: -1.3125s;
+}
+.bc-circ-loader .bc-circle-load:nth-child(4) {
+    animation-delay: -1.5s;
+}

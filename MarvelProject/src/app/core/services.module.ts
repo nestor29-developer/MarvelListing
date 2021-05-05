@@ -7,6 +7,8 @@ import {
   CharactersService
 } from './services';
 import { ApiService } from './services/shared/api.service';  
+import { ComicsService } from './services/api/comics.service';
+import { StoriesService } from './services/api/stories.service';
 
 @NgModule({
   imports: [
@@ -15,6 +17,8 @@ import { ApiService } from './services/shared/api.service';
   providers: [
     ApiService,  
     CharactersService,
+    ComicsService,
+    StoriesService,
     { provide: HTTP_INTERCEPTORS, useClass: HttpTokenInterceptor, multi: true }
   ],
   declarations: []

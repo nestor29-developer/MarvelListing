@@ -13,6 +13,7 @@ export class MatCardCustomComponent implements OnInit {
   scrollLeftEnd;
   @ViewChild('cardContent', { static: false }) public cardContent: ElementRef;
   @Input() data: any;
+  @Input() title: any;
 
   constructor() { }
 
